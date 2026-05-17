@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bound by Design - Speech Script</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --text-main: #e2e8f0;
+            --accent-gold: #d4af37;
+            --accent-gold-dim: rgba(212, 175, 55, 0.15);
+            --card-bg: #161b22;
+            --border-color: #30363d;
+            --scripture-bg: #1c2128;
+            --text-muted: #8b949e;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Lato', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            margin-top: 0;
+            font-weight: 600;
+        }
+
+        .title-section {
+            text-align: center;
+            padding: 80px 20px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 60px;
+            background: radial-gradient(circle at center, #161b22 0%, #0d1117 100%);
+        }
+
+        .super-title {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            font-size: 1rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .part-container {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .part-container:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-gold);
+        }
+
+        .part-header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .part-title {
+            color: var(--accent-gold);
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Badges & Tags */
+        .tag {
+            display: inline-block;
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .tag.concept { background-color: #1f2937; color: #9ca3af; border: 1px solid #374151; }
+        .tag.scripture { background-color: var(--accent-gold-dim); color: var(--accent-gold); border: 1px solid var(--accent-gold); }
+        .tag.narrative { background-color: #064e3b; color: #34d399; border: 1px solid #047857; }
+        .tag.sidenote { background-color: #4c1d95; color: #a78bfa; border: 1px solid #5b21b6; }
+        .tag.action { background-color: #7f1d1d; color: #fca5a5; border: 1px solid #991b1b; }
+
+        /* Content Blocks */
+        .block {
+            margin-bottom: 30px;
+        }
+
+        .block:last-child {
+            margin-bottom: 0;
+        }
+
+        .scripture-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--accent-gold);
+            background: var(--scripture-bg);
+            padding: 20px 30px;
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+        }
+
+        .narrative-text {
+            font-size: 1.15rem;
+            color: #d1d5db;
+        }
+
+        .narrative-text ul {
+            padding-left: 20px;
+        }
+
+        .narrative-text li {
+            margin-bottom: 15px;
+        }
+
+        .narrative-text strong {
+            color: #ffffff;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            letter-spacing: 0.5px;
+        }
+
+        .side-note {
+            background-color: rgba(76, 29, 149, 0.1);
+            border-left: 4px solid #7c3aed;
+            padding: 15px 20px;
+            font-size: 1rem;
+            color: #a78bfa;
+            font-style: italic;
+        }
+
+        .call-to-action {
+            background: linear-gradient(135deg, #1a0b0b 0%, #3f0f0f 100%);
+            border: 1px solid #7f1d1d;
+            text-align: left;
+        }
+
+        .call-to-action .narrative-text strong {
+            color: var(--accent-gold);
+        }
+
+        /* Print Styles for the Podium */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+                font-size: 16px;
+            }
+            .title-section, .part-container, .scripture-text, .call-to-action {
+                background: none !important;
+                border: none !important;
+                box-shadow: none !important;
+                color: black !important;
+            }
+            .super-title, .part-title, .scripture-text {
+                color: black !important;
+            }
+            .tag {
+                border: 1px solid black !important;
+                color: black !important;
+            }
+            .part-container {
+                page-break-inside: avoid;
+                margin-bottom: 20px;
+                border-top: 2px solid black !important;
+                border-radius: 0;
+                padding: 20px 0;
+            }
+            .narrative-text strong {
+                color: black !important;
+            }
+            .side-note {
+                border-left: 2px dashed black !important;
+                color: #333 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="title-section">
+        <span class="super-title">Speech Manuscript</span>
+        <h1>Bound by Design</h1>
+        <h3 style="color: var(--text-muted); font-style: italic; font-weight: 300;">Nitinol, the Laws of Creation, and the Ultimate Restoration</h3>
+    </header>
+
+    <main class="container">
+
+        <!-- PART 1 -->
+        <article class="part-container">
+            <header class="part-header">
+                <h2 class="part-title">Part 1: The Foundation – God’s Blueprint</h2>
+            </header>
+
+            <div class="block">
+                <span class="tag concept">The Concept</span>
+                <div class="narrative-text">
+                    Before man ever formed a metal, God formed the rules.
+                </div>
+            </div>
+
+            <div class="block">
+                <span class="tag scripture">Scripture</span>
+                <div class="scripture-text">
+                    "In the beginning God created the heavens and the earth." — Genesis 1:1
+                </div>
+            </div>
+
+            <div class="block">
+                <span class="tag narrative">Narrative</span>
+                <div class="narrative-text">
+                    Start by emphasizing that when God created the universe, He didn't just throw things together randomly. He created the elements—Nickel, Titanium, protons, electrons, and neutrons—and He bound them by absolute laws. They have no choice but to obey His physical laws. Introduce the Atom and the Atomic Ratio. Explain that the universe is built on a perfect, mathematical ratio authored by the Creator.
+                </div>
+            </div>
+        </article>
+
+        <!-- PART 2 -->
+        <article class="part-container">
+            <header class="part-header">
+                <h2 class="part-title">Part 2: The Forces at Play – The Alpha & Omega</h2>
+            </header>
+
+            <div class="block">
+                <span class="tag concept">The Concept</span>
+                <div class="narrative-text">
+                    How does God hold the universe together, and where does decay come from?
+                </div>
+            </div>
+
+            <div class="block">
+                <span class="tag scripture">Scripture</span>
+                <div class="scripture-text">
+                    "In Him all things hold together." — Colossians 1:17<br>
+                    (Reference also: Ephesians 2:2)
+                </div>
+            </div>
+
+            <div class="block">
+                <span class="tag narrative">Narrative</span>
+                <div class="narrative-text">
+                    Bring in your brilliant observation about the four fundamental forces of the universe. Scientists suspect these forces were originally "One" at the beginning of time—pointing us straight to Christ, the Alpha and Omega!
+                    <ul>
+                        <li><strong>The Strong Force:</strong> This is the force that binds the nucleus of the atom together. It perfectly mirrors the sustaining power of God. It is the ultimate bond.</li>
+                        <li><strong>The Weak Force & Radioactive Decay:</strong> Point out the profound spiritual parallel here. The "weak force" is responsible for decay. Compare this to Isaiah 14:12-14 (the fall of the son of the morning) and Ephesians 2:2. Just as the prince of the power of the air brought spiritual decay (sin) into the world, the weak force brings physical decay.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="block">
+                <span class="tag sidenote">Side Note for the Audience</span>
+                <div class="side-note">
+                    You can briefly mention Dark Matter here, referencing Colossians 1:13, tying the physical mysteries of the cosmos to the "domain of darkness" that Christ rescues us from.
+                </div>
+            </div>
+        </article>
+
+        <!-- PART 3 -->
+        <article class="part-container">
+            <header class="part-header">
+                <h2 class="part-title">Part 3: The Discovery – Uncovering God’s Hidden Laws</h2>
+            </header>
+
+            <div class="block">
+                <span class="tag concept">The Concept</span>
+                <div class="narrative-text">
+                    Man doesn't invent; man merely discovers what God has already set in motion.
+                </div>
+            </div>
+
+            <div class="block">
+                <span class="tag narrative">Narrative</span>
+                <div class="narrative-text">
+                    Transition to 1958. Tell the story of the Naval Ordnance Laboratory. Metallurgist William J. Buehler is tasked with finding a material for the nose cone of the Navy Polaris reentry vehicle (a missile launched from nuclear subs). He starts mixing Nickel and Titanium in equal atomic percentages.
+                    <br><br>
+                    <strong>The Acoustic Damping:</strong> In 1959, Buehler discovers something strange. God’s law is at work in this metal in a unique way. When the metal is warm, it rings like a beautiful bell. When it is cold, it thuds like dead lead. 
+                    <br><br>
+                    <em>(Spiritual parallel: When we are warm with the Spirit, we ring true; when we grow cold, we are spiritually deadened).</em>
+                </div>
+            </div>
+        </article>
+
+        <!-- PART 4 -->
+        <article class="part-container">
+            <header class="part-header">
+                <h2 class="part-title">Part 4: The Climax – The Fire and the Memory</h2>
+            </header>
+
+            <div class="block">
+                <span class="tag concept">The Concept</span>
+                <div class="narrative-text">
+                    The 1960 Boardroom Demonstration.
+                </div>
+            </div>
+
+            <div class="block">
+                <span class="tag narrative">Narrative</span>
+                <div class="narrative-text">
+                    <strong>Set the Scene:</strong> It’s 1960. Buehler is showing off this new metal, NiTinol, to the higher-ups to show how fatigue-resistant it is. He takes a long, thin strip of it. He bends it, twists it, and deforms it, passing it around the conference table. It looks ruined, bent out of shape.
+                    <br><br>
+                    <strong>The Spark:</strong> Dr. David S. Muzzy, a pipe smoker, decides to test it. He pulls out his lighter and holds the flame to the twisted metal.
+                    <br><br>
+                    <strong>The Miracle of Law:</strong> To everyone's absolute amazement, as the heat touches the metal, it violently uncoils. It stretches out longitudinally, snapping perfectly back into its original, straight shape.
+                </div>
+            </div>
+        </article>
+
+        <!-- PART 5 -->
+        <article class="part-container">
+            <header class="part-header">
+                <h2 class="part-title">Part 5: The Conclusion – Formed in His Image</h2>
+            </header>
+
+            <div class="block">
+                <span class="tag concept">The Concept</span>
+                <div class="narrative-text">
+                    The Shape Memory Effect points directly to Christ Jesus and our redemption.
+                </div>
+            </div>
+
+            <div class="block">
+                <span class="tag scripture">Scripture</span>
+                <div class="scripture-text">
+                    "Let Us make man in Our image, according to Our likeness..." — Genesis 1:26
+                </div>
+            </div>
+
+            <div class="block">
+                <span class="tag narrative">Narrative</span>
+                <div class="narrative-text">
+                    Bring the message home to Christ. Explain that scientists call this the "Shape Memory Effect." The metal remembers the shape it was forged in. It cannot help it; under the right conditions, it must obey the physical law God placed inside its atomic structure.
+                </div>
+            </div>
+        </article>
+
+        <!-- CALL TO ACTION -->
+        <article class="part-container call-to-action">
+            <header class="part-header" style="border-bottom-color: #7f1d1d;">
+                <h2 class="part-title" style="color: #fca5a5;">The Call to Action</h2>
+            </header>
+
+            <div class="block">
+                <span class="tag action">Delivery</span>
+                <div class="narrative-text" style="font-size: 1.25rem; line-height: 2;">
+                    <ul>
+                        <li>Like Nitinol, we were <strong>forged in a specific shape</strong>: The image of God (Gen 1:26).</li>
+                        <li>Life, the world, and the "weak force" of sin (decay) bends us, twists us, and leaves us unrecognizable from our original design. <strong>We look ruined.</strong></li>
+                        <li>But God’s law of redemption is waiting. When the <strong>Refiner's Fire</strong>—the presence of Christ Jesus and the Holy Spirit—is applied to our lives, a miraculous reaction takes place.</li>
+                        <li>We are compelled by God's spiritual law to snap back into our original design. <strong>We are restored into the image of Christ.</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+</body>
+</html>
